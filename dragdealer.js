@@ -337,6 +337,7 @@ Dragdealer.prototype =
 			Cursor.y - Position.get(this.handle)[1]
 		];
 		
+		$(this.handle).addClass('dragging');		
 		this.dragging = true;
 	},
 	stopDrag: function()
@@ -345,6 +346,8 @@ Dragdealer.prototype =
 		{
 			return;
 		}
+		
+		$(this.handle).removeClass('dragging');
 		this.dragging = false;
 		
 		var target = this.groupClone(this.value.current);
